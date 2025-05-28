@@ -943,7 +943,8 @@ DEFINE CLASS json AS Custom
 	    
 	    
 	    CASE cType = "C" AND USED(puObjectOrAlias) AND !plValueMode  && Cursor	        
-	         cJSON = [{"name" : "] + puObjectOrAlias + [", "rows" : ] + "["         
+			 cJSON = "["
+	         *cJSON = [{"name" : "] + puObjectOrAlias + [", "rows" : ] + "["         
 	         *cJSON = [{"name" = "] + puObjectOrAlias + [", "rows" = ] + "["
 	         IF !EMPTY(pnDSID) 
 	          SET DATASESSION TO (pnDSID)
@@ -974,7 +975,7 @@ DEFINE CLASS json AS Custom
 	          cJSON = cJSON + [, ] + pcAdditionalFields
 	         ENDIF
 	         
-	         cJSON = cJSON + [}]
+	         *cJSON = cJSON + [}]
 
 	         
 	         
