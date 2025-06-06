@@ -987,7 +987,7 @@ DEFINE CLASS json AS Custom
 		              IF THIS.encodeHTMLEntities
 		              	uValue = THIS.escapeHTML(RTRIM(uValue))
 		              ENDIF
-		              cValue = ["] + uValue + ["]
+		              cValue = ["] + TRIM(uValue) + ["]
 		              
 		         CASE cValueType $ "NIYF"
 		              IF INT(uValue) = uValue
